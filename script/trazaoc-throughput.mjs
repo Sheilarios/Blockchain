@@ -6,7 +6,6 @@ const TOTAL = 100;
 const EMISOR = "ENT-MINSA";
 const ARCHIVO = "resultados_throughput.csv";
 
-// Registro simulado: no usa React, localStorage, una API ni una red blockchain.
 async function registrarOC(id, emisor, registro) {
   if (registro.has(id)) throw new Error(`La OC ${id} ya existe`);
 
@@ -21,7 +20,6 @@ async function main() {
   const resultados = [];
   const errores = [];
 
-  // El cronómetro excluye la generación de IDs y la escritura del CSV.
   const inicio = performance.now();
   for (const [i, id] of ids.entries()) {
     let estado = "OK";
